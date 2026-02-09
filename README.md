@@ -1,6 +1,6 @@
   #  Placement Advisor System (Rule-Based + ML Hybrid)
 
-  An end-to-end Placement Preparation System that analyzes student skill profiles using a hybrid rule-based and machine learning approach to recommend suitable career domains, generate probability-based predictions, and suggest company-fit preparation paths.
+  An end-to-end Placement Preparation System that analyzes student skill profiles using a hybrid rule-based and machine learning approach to recommend suitable career domains, generate probability-based predictions, and suggest company-fit .
 
   This project demonstrates a complete full-stack workflow including profile evaluation, domain scoring, ML classification, probability visualization, and Flask-based web deployment.
 
@@ -172,7 +172,7 @@
 
   ---
 
-  ## 🛠 Technologies Used
+  ##  Technologies Used
 
   - Python
   - Flask
@@ -211,10 +211,15 @@
 
   ---
 
+  ## License 
+  
+  MIT License
+
   ## Author
 
   Zaheen M Vora  
   Computer Engineering Student | Aspiring Data Science and ML Engineer
+
 
 
 
