@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Placement Path Advisor</title>
+</head>
+<body>
+<div class="container">
+    <h1> Placement Path Advisor</h1>
+
+    <form action="/analyze" method="POST">
+        <label>DSA (1-5)</label>
+        <input type="number" name="dsa" min="1" max="5" required>
+
+        <label>Python (1-5)</label>
+        <input type="number" name="python" min="1" max="5" required>
+
+        <label>Web (1-5)</label>
+        <input type="number" name="web" min="1" max="5" required>
+
+        <label>ML (1-5)</label>
+        <input type="number" name="ml" min="1" max="5" required>
+
+        <label>OS (1-5)</label>
+        <input type="number" name="os" min="1" max="5" required>
+
+        <label>DBMS (1-5)</label>
+        <input type="number" name="dbms" min="1" max="5" required>
+
+        <label>CGPA</label>
+        <input type="number" step="0.1" name="cgpa" required>
+
+        <button type="submit">Analyze Profile</button>
+    </form>
+</div>
+</body>
+
+</html>

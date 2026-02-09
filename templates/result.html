@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+
+    <h1>Analysis Result</h1>
+
+<div class="card">
+    <h2>Overall Profile Strength</h2>
+    <div class="prob-bar">
+        <div class="prob-fill" style="width: {{ overall_percentage }}%;">
+            {{ overall_percentage }}%
+        </div>
+    </div>
+</div>
+
+
+    <div class="card">
+        <h2>Rule-Based Recommendation</h2>
+        <p><strong>{{ rule_result.recommended_domain }}</strong></p>
+    </div>
+
+    <div class="card">
+        <h2>ML-Based Recommendation</h2>
+        <p><strong>{{ ml_result.recommended_domain_ml }}</strong></p>
+    </div>
+
+    <div class="card">
+    <h2>Company Fit Suggestions</h2>
+    <div>
+        {% for company in companies %}
+            <span style="
+                display:inline-block;
+                background:#4e73df;
+                color:white;
+                padding:6px 12px;
+                margin:5px;
+                border-radius:20px;
+                font-size:14px;">
+                {{ company }}
+            </span>
+        {% endfor %}
+    </div>
+    </div>
+
+    <div class="card">
+        <h2>ML Probabilities</h2>
+
+        {% for domain, prob in ml_result.probabilities.items() %}
+            <p>{{ domain }}</p>
+            <div class="prob-bar">
+                <div class="prob-fill" style="width: {{ prob*100 }}%;">
+                    {{ "%.0f"|format(prob*100) }}%
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="card">
+        <h2>Suggested Roadmap</h2>
+        <ol>
+            {% for step in rule_result.roadmap %}
+                <li>{{ step }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+
+    <a href="/">← Go Back</a>
+
+</div>
+</body>
+</html>
